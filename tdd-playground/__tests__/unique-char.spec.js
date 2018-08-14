@@ -10,7 +10,7 @@ describe('stringucression', () => {
     describe('when input has no unique letters', () => {
         it('should error', () => {
             const result = uc('aabbcc')
-            expect(result).toEqual('error')
+            expect(result).toEqual(undefined)
         })
     })
     describe('when there are non letter characters', () => {
