@@ -3,7 +3,13 @@ const low = require('../lib/lowest-int')
 describe('lowestInteger', () => {
   describe('when given array', () => {
     it('should return the lowest number greater than 0 and not in the array', () => {
-      const result = low([0, 1, 2, 3, 21, 4])
+      const result = low([2, 3, 21, 4])
+      expect(result).toEqual(1)
+    })
+  })
+  describe('when given array with duplicate values', () => {
+    it('should return the lowest number greater than 0 and not in the array', () => {
+      const result = low([0, 1, 2, 3, 21, 1, 4, 4])
       expect(result).toEqual(5)
     })
   })

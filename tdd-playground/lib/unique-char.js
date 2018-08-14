@@ -8,6 +8,6 @@ module.exports = str => {
     let char = strArr[i]
     strObj[char] = strObj[char] ? strObj[char] + 1 : 1
   }
-  result = Object.keys(strObj).find(key => strObj[key] === 1)
+  result = Object.keys(strObj).filter(key => strObj[key] === 1)[0]
   return result
 }
