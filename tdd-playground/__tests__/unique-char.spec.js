@@ -1,22 +1,22 @@
 const uc = require('../lib/unique-char')
 
 describe('stringucression', () => {
-    describe('when input hasmulitple single letters', () => {
+    describe('when input has mulitple single letters', () => {
         it('should return the first that appears', () => {
             const result = uc('abc')
             expect(result).toEqual('a')
         })
     })
     describe('when input has no unique letters', () => {
-        it('should error', () => {
+        it('should return undefined', () => {
             const result = uc('aabbcc')
-            expect(result).toEqual(undefined)
+            expect(result).toBeUndefined()
         })
     })
     describe('when there are non letter characters', () => {
-        it('should error', () => {
-            const result = uc('abbbc123!')
-            expect(result).toEqual('error')
+        it('should ingore non-letters', () => {
+            const result = uc('4abbbc123!')
+            expect(result).toEqual('a')
         })
     })
     describe('when input is not a string', () => {
