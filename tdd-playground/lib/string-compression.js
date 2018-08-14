@@ -40,7 +40,7 @@ module.exports = str => {
   for (let i = 0; i < str.length; i++) {
     count++
     newStr = str.replace(/[\s\W\0-9]/g, '')
-    if (newStr[i] != newStr[i + 1]) {
+    if (newStr[i] !== newStr[i + 1]) {
       output += newStr[i] + count
       count = 0
     }
