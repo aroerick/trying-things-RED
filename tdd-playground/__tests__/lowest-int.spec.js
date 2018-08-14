@@ -19,4 +19,10 @@ describe('lowestInteger', () => {
       expect(result).toEqual('error')
     })
   })
+  describe('when called without an argument', () => {
+    it('should error', () => {
+      const result = low()
+      expect(result).toEqual('error')
+    })
+  })
 })
