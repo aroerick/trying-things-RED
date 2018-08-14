@@ -6,7 +6,11 @@ module.exports = comp => {
    
      for (let i = 0; i < compArr.length; i++) {
        let num = compArr[i]
-       compObj[num] = compObj[num] ? compObj[num] + 1 : 1
+       if(num.match(/[a-z]/i)){
+         compObj[num] = compObj[num] ? compObj[num] + 1 : 1
+       } else {
+         return 'error'
+       }
      }
      const arrObj = Object.entries(compObj)
      const comped = [].concat.apply([], arrObj).join('')
@@ -15,5 +19,4 @@ module.exports = comp => {
   } else {
     return 'error'
   }
-  console.log([].concat.apply([], arrObj).join(''))
 }
