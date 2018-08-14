@@ -1,0 +1,21 @@
+{
+	"name": "redux-count",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "webpack-dev-server --mode development ./src/main.js --output ./dist/bundle.js --content-base dist/ --hot"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"redux-devtools-extension": "^2.13.5",
+		"webpack": "^4.16.2",
+		"webpack-cli": "^3.1.0",
+		"webpack-dev-server": "^3.1.5"
+	},
+	"dependencies": {
+		"redux": "^4.0.0"
+	}
+}

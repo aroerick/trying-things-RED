@@ -1,0 +1,36 @@
+<head>
+  <title>meteor-app</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+  {{> info}}
+</body>
+
+<template name="hello">
+  <button class="down">Down</button>
+  <button class="up">Up</button>
+  <p>The current count is: {{counter}}.</p>
+  <form class="jep">
+    <input class="wha" type="text"/>
+    <button class="jepp">GO</button>
+  </form>
+  <p>what is {{input}}, Alex?</p>
+  <pre>{{ items }}</pre>
+</template>
+
+<template name="goodbye">
+
+</template>
+
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>

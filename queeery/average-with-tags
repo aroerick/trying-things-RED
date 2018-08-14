@@ -1,0 +1,7 @@
+SELECT AVG(thing)
+	FROM (SELECT SUM(a) 
+		FROM 
+			INNER JOIN 
+				(SELECT COUNT(id)
+					FROM items)
+				ON 

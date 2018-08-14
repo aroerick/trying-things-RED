@@ -1,0 +1,65 @@
+/* 1 */
+INSERT INTO users(fullname, email, bio)
+	VALUES ('fullname', 'email', 'bio');
+
+/* 2 */
+INSERT INTO tags(title)
+	VALUES ('title');
+
+/* 3 */
+INSERT INTO items(title, description, ownerid)
+	VALUES ('title', 'description', '2');
+INSERT INTO itemtags(itemid, tagid)
+	VALUES ('4', '5');
+
+/* 4 */
+SELECT users.id
+	FROM users
+	WHERE users.email = 'bob@tim.com';
+
+/* 5 */
+SELECT * 
+	FROM users
+	WHERE users.id = 2;
+
+/* 6 */
+SELECT * FROM items;
+
+/* 7 */
+SELECT *
+	FROM items 
+		INNER JOIN users
+		ON items.ownerid = users.id
+	WHERE users.id = 2;
+
+/* 8 */
+SELECT *
+	FROM items 
+		INNER JOIN users
+		ON items.ownerid = users.id
+	WHERE users.id = 2
+	and borrowerid != NULL;
+
+/* 9 */
+SELECT *
+	FROM items 
+		INNER JOIN users
+		ON items.borrowerid = users.id
+	WHERE users.id = 2;
+
+/* 10 */
+SELECT tags.title
+	FROM tags;
+	
+/* 11 */
+
+SELECT tags.title as tags
+	FROM 
+		items
+		INNER JOIN itemtags
+			ON items.id = itemtags.itemid
+		INNER JOIN tags
+			ON itemtags.tagid = tags.id
+	WHERE
+		items.id = 5;
+	

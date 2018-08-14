@@ -1,0 +1,1 @@
+module.exports = (s, e, l) => (s <= e && l > 0 ? Math.ceil((e - s) / l) : 'error')

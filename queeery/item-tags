@@ -1,0 +1,9 @@
+SELECT items.title as item, tags.title as tags
+	FROM 
+		items
+		INNER JOIN itemtags
+			ON items.id = itemtags.itemid
+		INNER JOIN tags
+			ON itemtags.tagid = tags.id
+	WHERE
+		items.id = 5;
