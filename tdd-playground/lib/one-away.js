@@ -8,6 +8,18 @@ module.exports = (str, tar) => {
     !tar.length
   )
     return 'error'
-
+  if (
+    (str.length > tar.length && str.length - tar.length !== 1) ||
+    (tar.length > str.length && tar.length - str.length !== 1)
+  )
+    return false
+    
+  if (str.length - tar.length === 1) {
+    console.log('deletion')
+  } else if (tar.length - str.length === 1) {
+    console.log('addition')
+  } else {
+    console.log('substitution')
+  }
   return true
 }

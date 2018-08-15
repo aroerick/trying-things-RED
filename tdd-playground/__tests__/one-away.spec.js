@@ -27,7 +27,13 @@ describe('oneAway', () => {
   })
   describe('when target cannot be reached with one operation', () => {
     it('should return false', () => {
-      const result = one('pickle', 'pale')
+      const result = one('joke', 'pale')
+      expect(result).toEqual(false)
+    })
+  })
+  describe('when target is much longer than string', () => {
+    it('should return false', () => {
+      const result = one('I AM IRON MAN', 'pale')
       expect(result).toEqual(false)
     })
   })
