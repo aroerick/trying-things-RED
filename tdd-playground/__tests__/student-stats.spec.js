@@ -29,7 +29,8 @@ describe('student stats', () => {
         2: { satisfaction: 10 },
         3: { satisfaction: 10 },
         4: { satisfaction: 10 },
-        5: { satisfaction: 10 }
+        5: { satisfaction: 10 },
+        6: { satisfaction: 10 }
       },
       demographics: {
         averageAge: 10,
