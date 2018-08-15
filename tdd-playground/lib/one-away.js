@@ -8,18 +8,30 @@ module.exports = (str, tar) => {
     !tar.length
   )
     return 'error'
-  if (
-    (str.length > tar.length && str.length - tar.length !== 1) ||
-    (tar.length > str.length && tar.length - str.length !== 1)
-  )
-    return false
-    
-  if (str.length - tar.length === 1) {
-    console.log('deletion')
-  } else if (tar.length - str.length === 1) {
-    console.log('addition')
-  } else {
-    console.log('substitution')
+
+  let countA = 0
+  let countB = 0
+  let diff = 0
+
+  if(str.length > tar.length) {lon = str, sho = tar} else {lon = tar, sho = str}
+  if(lon.length - sho.length > 1) return false
+
+  for (let i = 0; i < lon.length; ++i) {
+    if (lon.length === sho.length) {
+      if(lon[countA] === sho[countA]) {
+        countA++
+      } else {
+        countA++
+        diff++
+      }
+    }
+    else if (lon[countA] === sho[countB]) {
+      countA++
+      countB++
+    } else {
+      countA++
+      diff++
+    }
   }
-  return true
+  return diff > 1 ? false : true
 }
