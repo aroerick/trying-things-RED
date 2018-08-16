@@ -18,7 +18,7 @@ describe('Process Data', () => {
       age: 24,
       yearsExperience: 6,
       satisfaction: 1,
-      project1: 'pass',
+      project1: 'fail',
       project2: 'fail',
       project3: 'fail',
       project4: 'fail'
@@ -69,19 +69,19 @@ describe('Process Data', () => {
       })
     })
   })
-  describe('Experience', () => {
-    it('Should return average satisfaction for all years of experience given in data', () => {
-      expect(processedData.experience[5]).toEqual({
-        satisfaction: 4
-      })
-    })
-  })
-  describe('Demographics', () => {
-    it('Should return the average age and average satisfaction for data set', () => {
-      expect(processedData.demographics).toEqual({
-        averageAge: 25,
-        averageSatisfaction: 3
-      })
-    })
-  })
+  // describe('Experience', () => {
+  //   it('Should return average satisfaction for all years of experience given in data', () => {
+  //     expect(processedData.experience[5]).toEqual({
+  //       satisfaction: 4
+  //     })
+  //   })
+  // })
+  // describe('Demographics', () => {
+  //   it('Should return the average age and average satisfaction for data set', () => {
+  //     expect(processedData.demographics).toEqual({
+  //       averageAge: 25,
+  //       averageSatisfaction: 3
+  //     })
+  //   })
+  // })
 })
