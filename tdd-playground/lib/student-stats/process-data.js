@@ -11,7 +11,7 @@ module.exports = data => {
   let satis = []
   let age = []
 
-  const passfail = pnum => {
+  const projectsData = pnum => {
     for (let i = 0; i < data.length; i++) {
       data[i][`project${pnum}`] === 'pass'
         ? passed.push(data[i].satisfaction)
@@ -22,7 +22,7 @@ module.exports = data => {
       failed: { number: failed.length, satisfaction: averageArr(failed) }
     }
   }
-  const expSat = years => {
+  const experienceData = years => {
     for (let i = 0; i < data.length; i++) {
       if(data[i].yearsExperience === years) satis.push(data[i].satisfaction)
     }
@@ -44,18 +44,18 @@ module.exports = data => {
     }
   }
   let projects = {
-    project1: passfail(1),
-    project2: passfail(2),
-    project3: passfail(3),
-    project4: passfail(4)
+    project1: projectsData(1),
+    project2: projectsData(2),
+    project3: projectsData(3),
+    project4: projectsData(4)
   }
   let experience = {
-    1: expSat(1),
-    2: expSat(2),
-    3: expSat(3),
-    4: expSat(4),
-    5: expSat(5),
-    6: expSat(6)
+    1: experienceData(1),
+    2: experienceData(2),
+    3: experienceData(3),
+    4: experienceData(4),
+    5: experienceData(5),
+    6: experienceData(6)
   }
   let demographics = demographicsData()
   let processedData = {
